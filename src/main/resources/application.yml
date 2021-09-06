@@ -1,0 +1,14 @@
+
+spring:
+  datasource:
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/student?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: mybatis/mapper/**/*Mapper.xml
+server:
+  port: 9081
