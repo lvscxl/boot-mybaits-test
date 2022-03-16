@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 数据库驱动 -->
+   <!-- <classPathEntry  location="D:\mysql-connector-java-5.1.42.jar"/>-->
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+
+        <!--<plugin type="plugin.SelectByPagePlugin" />-->
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <!--<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">-->
+        <!--<property name="searchString" value="Example$" />-->
+        <!--<property name="replaceString" value="Criteria" />-->
+        <!--</plugin>-->
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+
+<!--        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://rm-2zeh7r5s96nge1014.mysql.rds.aliyuncs.com:3306/hilife_crm?rewriteBatchedStatements=true"-->
+<!--                        userId="hilife_crm" password="Hilife2018">-->
+<!--        </jdbcConnection>-->
+
+<!--                <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://rm-2zeh7r5s96nge1014.mysql.rds.aliyuncs.com:3306/clothingsupply?rewriteBatchedStatements=true"-->
+<!--                                userId="clothingsupply" password="Hilife2018">-->
+
+<!--        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://rm-2zeh7r5s96nge1014.mysql.rds.aliyuncs.com:3306/clothingsupply?rewriteBatchedStatements=true"-->
+<!--                        userId="hilife_clothingsupply" password="Hilife@2020">-->
+<!--        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://rm-2zeh7r5s96nge1014.mysql.rds.aliyuncs.com:3306/vshop?rewriteBatchedStatements=true"-->
+<!--                        userId="vshop" password="Hilife@2018">-->
+
+<!--                </jdbcConnection>-->
+
+<!--        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://rm-2zeh7r5s96nge1014.mysql.rds.aliyuncs.com:3306/vshop?rewriteBatchedStatements=true"-->
+<!--                        userId="vshop" password="Hilife2018">-->
+<!--        </jdbcConnection>-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/student?rewriteBatchedStatements=true"
+                        userId="root" password="root">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.zp.order.entity"
+                            targetProject="../boot-mybaits-test/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+            <property name="rootClass" value="java.io.Serializable"/>
+            <property name="javaExampleTargetPackage" value="com.zp.order.entity.criteria"/>
+            <property name="javaExampleTargetProject" value="../boot-mybaits-test/src/main/java"/>
+        </javaModelGenerator>
+
+        <!-- 生成映射文件的包名和位置-->
+        <sqlMapGenerator targetPackage="mybatis.mapper.mapping" targetProject="../boot-mybaits-test//src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!-- 生成DAO的包名和位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zp.order.mapper" targetProject="../boot-mybaits-test/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+
+    <!--    <table tableName="sys_admin">
+            <generatedKey column="id" sqlStatement="Mysql" type="post" identity="true"/>
+            <columnOverride column="user_name" javaType="String" />
+            <columnOverride column="account" javaType="String" />
+            <columnOverride column="password" javaType="String" />
+            <columnOverride column="role_type" javaType="Integer" />
+            <columnOverride column="company_info_id" javaType="String" />
+            <columnOverride column="salt" javaType="String" />
+        </table>-->
+<!--
+        <table tableName="app_info">
+                &lt;!&ndash;<generatedKey column="id" sqlStatement="Mysql" type="post" identity="true"/>&ndash;&gt;
+            <columnOverride column="platform_type" javaType="Integer" />
+        </table>
+-->
+       <!-- <table tableName="proceeds_detail">
+                &lt;!&ndash;<generatedKey column="id" sqlStatement="Mysql" type="post" identity="true"/>&ndash;&gt;
+            <columnOverride column="year" javaType="Integer" />
+            <columnOverride column="month" javaType="Integer" />
+            <columnOverride column="proceed_model" javaType="Integer" />
+            <columnOverride column="proceed_type" javaType="Integer" />
+            <columnOverride column="proceed_statue" javaType="Integer" />
+            <columnOverride column="deleted" javaType="Integer" />
+            <columnOverride column="isSettle" javaType="Integer" />
+        </table>-->
+
+<!--        <table tableName="person_show">-->
+<!--            <generatedKey column="id" sqlStatement="Mysql" type="post" identity="true"/>-->
+<!--        </table>-->
+<!--        <table tableName="suggestions">-->
+<!--        </table>-->
+<!--                <table tableName="work_area">-->
+<!--        <table tableName="copartner"> </table>-->
+<!--        <table tableName="copartner_label_info"></table>-->
+<!--        <table tableName="user"></table>-->
+<!--        <table tableName="yh_app_version"></table>-->
+
+<!--        <table tableName="business"></table>-->
+<!--        <table tableName="user"></table>-->
+<!--        <table tableName="delivery_address"></table>-->
+<!--        <table tableName="user_operate_record"></table>-->
+<!--        <table tableName="business_label_rel"></table>-->
+<!--        <table tableName="business_label"></table>-->
+
+<!--        <table tableName="province_city_district"></table>-->
+
+<!--        <table tableName="settlement_node"></table>-->
+
+        <table tableName="customer"></table>
+
+
+    </context>
+</generatorConfiguration>

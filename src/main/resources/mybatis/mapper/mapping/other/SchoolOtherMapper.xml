@@ -72,4 +72,8 @@
     <select id="querySchools"  resultMap="BaseResultMap">
         select * from school
     </select>
+    <select id="querySchoolByPage"  resultMap="BaseResultMap">
+        select * from school
+    </select>
+
 </mapper>
